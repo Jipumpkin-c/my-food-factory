@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<meta name="theme-color" content="#ff8c42">
+<title>나만의 식품공장</title>
+<link rel="stylesheet" href="styles/base.css">
+<link rel="stylesheet" href="styles/components.css">
+<link rel="stylesheet" href="styles/screens.css">
+</head>
+<body>
+
+<!-- ===== 타이틀 화면 ===== -->
+<div id="title-screen" class="title-screen">
+  <div class="title-floats" aria-hidden="true"></div>
+  <div class="title-inner">
+    <div class="title-emoji">🏭</div>
+    <h1 class="title-h1">나만의 식품공장</h1>
+    <p class="title-sub">재료를 고르고, 식품을 만들고,<br>최고의 식품공장을 만들어보세요!</p>
+    <div class="title-btns">
+      <button class="btn primary big" data-act="start">🎮 게임 시작</button>
+      <button class="btn big" data-act="how">📖 게임 설명</button>
+      <button class="btn big" data-act="codex">📚 식품공학 도감</button>
+      <button class="btn big" data-act="settings">⚙️ 설정</button>
+    </div>
+    <p class="title-foot" id="title-foot">진행 상황은 브라우저에 자동 저장됩니다</p>
+  </div>
+</div>
+
+<!-- ===== 게임 본체 ===== -->
+<div id="game" hidden>
+  <header id="topbar"></header>
+  <main id="app">
+    <section class="screen" id="screen-factory"></section>
+    <section class="screen" id="screen-cook"></section>
+    <section class="screen" id="screen-market"></section>
+    <section class="screen" id="screen-research"></section>
+    <section class="screen" id="screen-codex"></section>
+    <section class="screen" id="screen-missions"></section>
+  </main>
+  <nav id="navbar"></nav>
+</div>
+
+<div id="overlay-root"></div>
+<div id="toast-root"></div>
+<div id="fx-root" aria-hidden="true"></div>
+
+<!-- ===== 스크립트 (의존성 순서) ===== -->
+<script src="src/utils/core.js"></script>
+<script src="src/systems/audio.js"></script>
+
+<script src="src/data/ingredients.js"></script>
+<script src="src/data/foods.js"></script>
+<script src="src/data/packaging.js"></script>
+<script src="src/data/progression.js"></script>
+<script src="src/data/content.js"></script>
+
+<script src="src/systems/state.js"></script>
+<script src="src/systems/quality.js"></script>
+<script src="src/systems/economy.js"></script>
+<script src="src/systems/progress.js"></script>
+
+<script src="src/ui/ui.js"></script>
+
+<script src="src/minigames/knead.js"></script>
+<script src="src/minigames/heat.js"></script>
+<script src="src/minigames/dial.js"></script>
+<script src="src/minigames/choice.js"></script>
+
+<script src="src/screens/intro.js"></script>
+<script src="src/screens/factory.js"></script>
+<script src="src/screens/market.js"></script>
+<script src="src/screens/cook.js"></script>
+<script src="src/screens/menus.js"></script>
+
+<script src="src/main.js"></script>
+</body>
+</html>
